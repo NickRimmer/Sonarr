@@ -24,6 +24,7 @@ namespace NzbDrone.Core.Tv
         public int TvMazeId { get; set; }
         public string ImdbId { get; set; }
         public string Title { get; set; }
+        public string Aliases { get; set; }
         public string CleanTitle { get; set; }
         public string SortTitle { get; set; }
         public SeriesStatusType Status { get; set; }
@@ -77,6 +78,7 @@ namespace NzbDrone.Core.Tv
             SeriesType = otherSeries.SeriesType;
             RootFolderPath = otherSeries.RootFolderPath;
             Tags = otherSeries.Tags;
+            Aliases = otherSeries.Aliases;
             AddOptions = otherSeries.AddOptions;
         }
     }

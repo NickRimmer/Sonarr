@@ -491,10 +491,11 @@ namespace NzbDrone.Core.IndexerSearch
         private TSpec Get<TSpec>(Series series, SceneSeasonMapping mapping, bool monitoredOnly, bool userInvokedSearch, bool interactiveSearch)
             where TSpec : SearchCriteriaBase, new()
         {
+            var aliases = series.Aliases?.Split(';').Select(x => x.Trim()).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
             var spec = new TSpec();
 
             spec.Series = series;
-            spec.SceneTitles = mapping.SceneTitles;
+            spec.SceneTitles = aliases?.Length > 0 ? mapping.SceneTitles.Union(aliases).ToList() : mapping.SceneTitles;
             spec.SearchMode = mapping.SearchMode;
 
             spec.Episodes = mapping.Episodes;

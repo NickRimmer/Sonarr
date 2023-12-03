@@ -17,6 +17,7 @@ namespace Sonarr.Api.V3.Series
 
         // View Only
         public string Title { get; set; }
+        public string Aliases { get; set; }
         public List<AlternateTitleResource> AlternateTitles { get; set; }
         public string SortTitle { get; set; }
 
@@ -88,6 +89,7 @@ namespace Sonarr.Api.V3.Series
                        Id = model.Id,
 
                        Title = model.Title,
+                       Aliases = model.Aliases,
 
                        // AlternateTitles
                        SortTitle = model.SortTitle,
@@ -154,6 +156,7 @@ namespace Sonarr.Api.V3.Series
                        Id = resource.Id,
 
                        Title = resource.Title,
+                       Aliases = resource.Aliases,
 
                        // AlternateTitles
                        SortTitle = resource.SortTitle,
