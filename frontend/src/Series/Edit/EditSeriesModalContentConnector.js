@@ -43,6 +43,7 @@ function createMapStateToProps() {
         'qualityProfileId',
         'seriesType',
         'path',
+        'aliases',
         'tags'
       ]);
 

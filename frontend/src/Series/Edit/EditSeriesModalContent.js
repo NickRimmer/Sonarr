@@ -81,6 +81,7 @@ class EditSeriesModalContent extends Component {
       qualityProfileId,
       seriesType,
       path,
+      aliases,
       tags
     } = item;
 
@@ -171,6 +172,17 @@ class EditSeriesModalContent extends Component {
                 type={inputTypes.PATH}
                 name="path"
                 {...path}
+                onChange={onInputChange}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <FormLabel>{translate('Aliases')}</FormLabel>
+
+              <FormInputGroup
+                type={inputTypes.TEXT}
+                name="aliases"
+                {...aliases}
                 onChange={onInputChange}
               />
             </FormGroup>
